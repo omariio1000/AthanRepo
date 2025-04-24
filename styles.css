@@ -1,10 +1,10 @@
 /* === Base page & typography === */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #1c1c1c; /* Dark background (blackish) */
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1c1c1c;
   margin: 0;
   padding: 2rem;
-  color: #ecf0f1; /* Light text color */
+  color: #ecf0f1;
 }
 
 main {
@@ -18,27 +18,21 @@ ul {
   margin: 0;
 }
 
-li {
-  margin-bottom: 1.5rem;
-}
-
-li > a {
-  text-decoration: none;
-  color: #ecf0f1; /* Light text for main links */
-  font-size: 1.2rem;
-  font-weight: bold;
+/* Specific to track lists */
+.track-list li {
+  margin-bottom: 0.75rem;
 }
 
 /* === Card container === */
 .card {
   display: flex;
   align-items: flex-start;
-  background-color: #303030; /* Dark grey card background */
+  background-color: #303030;
   border-radius: 12px;
   padding: 1rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease;
-  margin-bottom: 1.5rem; /* Space between cards */
+  margin-bottom: 1.5rem;
 }
 
 .card:hover {
@@ -57,72 +51,72 @@ li > a {
   flex: 1;
 }
 
-/* === Header (name + player) === */
+/* === Header styling for single-track cards === */
 .card-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-wrap: wrap;
+  margin-bottom: 0.5rem;
 }
 
 .card-header h3,
 .card-header a {
   margin: 0;
   font-size: 1.1rem;
-  color: #ecf0f1; /* Light text */
-  flex: 1;
+  color: #ecf0f1;
   text-decoration: none;
 }
 
-/* === Audio player styling === */
-.card-header audio {
+audio {
   min-width: 200px;
   margin-left: 1rem;
-  background-color: #5e5e5e; /* Dark grey background for controls */
+  background-color: #5e5e5e;
   border-radius: 35px;
   border: none;
-  color: #ecf0f1; /* Light text/icons */
+  color: #ecf0f1;
 }
-
 /* Chrome/Safari controls */
-.card-header audio::-webkit-media-controls-enclosure,
-.card-header audio::-webkit-media-controls-panel {
+audio::-webkit-media-controls-enclosure,
+audio::-webkit-media-controls-panel {
   background-color: #5e5e5e;
   color: #ecf0f1;
 }
 
-.card-header audio::-webkit-media-controls-play-button,
-.card-header audio::-webkit-media-controls-volume-slider,
-.card-header audio::-webkit-media-controls-mute-button,
-.card-header audio::-webkit-media-controls-timeline {
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-volume-slider,
+audio::-webkit-media-controls-mute-button,
+audio::-webkit-media-controls-timeline {
   background-color: #5e5e5e;
   color: #ecf0f1;
 }
 
 /* Firefox controls */
-.card-header audio::-moz-media-controls {
+audio::-moz-media-controls {
   background-color: #5e5e5e;
   color: #ecf0f1;
 }
 
 /* === Multi‐track list styling === */
-.card-content ul {
+.track-list {
   margin-top: 0.5rem;
   padding-left: 0;
 }
 
-.card-content ul li.card-header {
-  margin: 0.3rem 0;
+.track-list .track-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
-.card-content ul li.card-header a {
+.track-list .track-item a {
   font-size: 0.95rem;
-  color: #bdc3c7; /* Light grey for sub-links */
-  flex: 1;
+  color: #bdc3c7;
   text-decoration: none;
+  flex: 1;
 }
 
-.card-content ul li.card-header audio {
+.track-list .track-item audio {
   min-width: 200px;
   margin-left: 1rem;
 }
