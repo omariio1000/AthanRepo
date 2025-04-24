@@ -1,76 +1,128 @@
+/* === Base page & typography === */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f5f7fa;
-    margin: 0;
-    padding: 2rem;
-    color: #333;
-  }
-  
-  main {
-    max-width: 800px;
-    margin: 0 auto;
-  }
-  
-  ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  
-  li {
-    margin-bottom: 1.5rem;
-  }
-  
-  li > a {
-    text-decoration: none;
-    color: #2c3e50;
-    font-size: 1.2rem;
-    font-weight: bold;
-  }
-  
-  .card {
-    display: flex;
-    align-items: flex-start;
-    background-color: #fff;
-    border-radius: 12px;
-    padding: 1rem;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
-    transition: transform 0.2s ease;
-  }
-  
-  .card:hover {
-    transform: scale(1.02);
-  }
-  
-  .card img {
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-right: 1rem;
-  }
-  
-  .card-content {
-    flex: 1;
-  }
-  
-  .card-content h3 {
-    margin: 0;
-    font-size: 1.1rem;
-    color: #2c3e50;
-  }
-  
-  .card-content ul {
-    margin-top: 0.5rem;
-    padding-left: 1rem;
-  }
-  
-  .card-content ul li a {
-    font-size: 0.95rem;
-    color: #2980b9;
-  }
-  
-  .card-content ul li {
-    margin: 0.3rem 0;
-  }
-  
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #1c1c1c; /* Dark background (blackish) */
+  margin: 0;
+  padding: 2rem;
+  color: #ecf0f1; /* Light text color */
+}
+
+main {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+li {
+  margin-bottom: 1.5rem;
+}
+
+li > a {
+  text-decoration: none;
+  color: #ecf0f1; /* Light text for main links */
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+/* === Card container === */
+.card {
+  display: flex;
+  align-items: flex-start;
+  background-color: #303030; /* Dark grey card background */
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease;
+  margin-bottom: 1.5rem; /* Space between cards */
+}
+
+.card:hover {
+  transform: scale(1.02);
+}
+
+.card img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 1rem;
+}
+
+.card-content {
+  flex: 1;
+}
+
+/* === Header (name + player) === */
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.card-header h3,
+.card-header a {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #ecf0f1; /* Light text */
+  flex: 1;
+  text-decoration: none;
+}
+
+/* === Audio player styling === */
+.card-header audio {
+  min-width: 200px;
+  margin-left: 1rem;
+  background-color: #5e5e5e; /* Dark grey background for controls */
+  border-radius: 35px;
+  border: none;
+  color: #ecf0f1; /* Light text/icons */
+}
+
+/* Chrome/Safari controls */
+.card-header audio::-webkit-media-controls-enclosure,
+.card-header audio::-webkit-media-controls-panel {
+  background-color: #5e5e5e;
+  color: #ecf0f1;
+}
+
+.card-header audio::-webkit-media-controls-play-button,
+.card-header audio::-webkit-media-controls-volume-slider,
+.card-header audio::-webkit-media-controls-mute-button,
+.card-header audio::-webkit-media-controls-timeline {
+  background-color: #5e5e5e;
+  color: #ecf0f1;
+}
+
+/* Firefox controls */
+.card-header audio::-moz-media-controls {
+  background-color: #5e5e5e;
+  color: #ecf0f1;
+}
+
+/* === Multi‐track list styling === */
+.card-content ul {
+  margin-top: 0.5rem;
+  padding-left: 0;
+}
+
+.card-content ul li.card-header {
+  margin: 0.3rem 0;
+}
+
+.card-content ul li.card-header a {
+  font-size: 0.95rem;
+  color: #bdc3c7; /* Light grey for sub-links */
+  flex: 1;
+  text-decoration: none;
+}
+
+.card-content ul li.card-header audio {
+  min-width: 200px;
+  margin-left: 1rem;
+}
