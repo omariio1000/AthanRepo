@@ -26,7 +26,9 @@ ul {
 /* === Card container === */
 .card {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
+  text-align: center;
+  flex-direction: column;
   background-color: #303030;
   border-radius: 12px;
   padding: 1rem;
@@ -40,11 +42,12 @@ ul {
 }
 
 .card img {
-  width: 64px;
-  height: 64px;
+  width: 150px;
+  height: 150px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 1rem;
+  margin-bottom: 1rem;
 }
 
 .card-content {
@@ -54,10 +57,12 @@ ul {
 /* === Header styling for single-track cards === */
 .card-header {
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+  text-align: center;
   flex-wrap: wrap;
-  margin-bottom: 0.5rem;
+  margin-bottom: 1rem;
 }
 
 .card-header h3,
@@ -69,12 +74,13 @@ ul {
 }
 
 audio {
-  min-width: 200px;
-  margin-left: 1rem;
   background-color: #5e5e5e;
   border-radius: 35px;
   border: none;
   color: #ecf0f1;
+  margin-top: 1rem; /* Add space above audio */
+  display: block;
+  max-width: 250px;
 }
 /* Chrome/Safari controls */
 audio::-webkit-media-controls-enclosure,
@@ -105,8 +111,10 @@ audio::-moz-media-controls {
 
 .track-list .track-item {
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column; /* Stack track name and audio */
+  align-items: center; /* Center align content */
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
 .track-list .track-item a {
@@ -114,9 +122,4 @@ audio::-moz-media-controls {
   color: #bdc3c7;
   text-decoration: none;
   flex: 1;
-}
-
-.track-list .track-item audio {
-  min-width: 200px;
-  margin-left: 1rem;
 }
